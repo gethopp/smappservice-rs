@@ -1,4 +1,4 @@
-# SMAppService-RS
+# smappservice-rs
 
 <!-- [![Crates.io](https://img.shields.io/crates/v/smappservice-rs)](https://crates.io/crates/smappservice-rs)
 [![Documentation](https://docs.rs/smappservice-rs/badge.svg)](https://docs.rs/smappservice-rs) -->
