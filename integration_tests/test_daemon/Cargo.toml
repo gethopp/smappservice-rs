@@ -1,0 +1,5 @@
+[package]
+name = "test_daemon"
+version = "0.1.0"
+edition = "2024"
+description = "Test for daemon service type of smappservice-rs"

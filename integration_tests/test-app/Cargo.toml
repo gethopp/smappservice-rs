@@ -1,0 +1,11 @@
+[package]
+name = "smappservice-test-app"
+version = "0.1.0"
+edition = "2024"
+description = "Test app for smappservice-rs"
+
+[dependencies]
+smappservice-rs = { path = "../../" }
+
+[package.metadata.bundle]
+identifier = "com.example.smappservice-test-app"

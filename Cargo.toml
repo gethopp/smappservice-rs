@@ -1,0 +1,19 @@
+[package]
+name = "smappservice-rs"
+version = "0.1.0"
+authors = ["iparaskev"]
+description = "A Rust wrapper for macOS's ServiceManagement framework, specifically the SMAppService API"
+repository = "https://github.com/gethopp/smappservice-rs"
+homepage = "https://github.com/gethopp/smappservice-rs"
+edition = "2024"
+license = "MIT"
+readme = "README.md"
+keywords = ["macos", "LoginItems", "LaunchAgent", "LaunchDaemon", "SMAppService"]
+categories = ["api-bindings", "os::macos-apis"]
+exclude = ["/integration_tests"]
+
+[dependencies]
+thiserror = "2.0.12"
+objc2-service-management = { version = "0.3.1", features = ["SMAppService"] }
+objc2-foundation = { version = "0.3.1", features = ["NSString"] }
+objc2 = "0.6.1"

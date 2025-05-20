@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "test_mainapp",
+    "test_agent",
+    "test_daemon",
+    "test_loginitem",
+]
+
+exclude = [
+    "test-app",
+]
+
+resolver = "3"
