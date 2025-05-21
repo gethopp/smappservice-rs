@@ -1,6 +1,6 @@
 [package]
 name = "smappservice-rs"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["iparaskev"]
 description = "A Rust wrapper for macOS's ServiceManagement framework, specifically the SMAppService API"
 repository = "https://github.com/gethopp/smappservice-rs"
@@ -11,6 +11,7 @@ readme = "README.md"
 keywords = ["macos", "LoginItems", "LaunchAgent", "LaunchDaemon", "SMAppService"]
 categories = ["api-bindings", "os::macos-apis"]
 exclude = ["/integration_tests"]
+documentation = "https://docs.rs/smappservice-rs"
 
 [dependencies]
 thiserror = "2.0.12"

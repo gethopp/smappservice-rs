@@ -1,7 +1,7 @@
 # smappservice-rs
 
-<!-- [![Crates.io](https://img.shields.io/crates/v/smappservice-rs)](https://crates.io/crates/smappservice-rs)
-[![Documentation](https://docs.rs/smappservice-rs/badge.svg)](https://docs.rs/smappservice-rs) -->
+[![Crates.io](https://img.shields.io/crates/v/smappservice-rs)](https://crates.io/crates/smappservice-rs)
+[![Documentation](https://docs.rs/smappservice-rs/badge.svg)](https://docs.rs/smappservice-rs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Rust wrapper for macOS's ServiceManagement framework, specifically the SMAppService API. This library provides a safe and idiomatic Rust interface for registering and managing macOS services.
