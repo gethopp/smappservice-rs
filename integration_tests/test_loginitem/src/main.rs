@@ -71,7 +71,7 @@ fn get_test_app_path() -> io::Result<PathBuf> {
         println!("Creating LoginItems directory...");
         Command::new("mkdir")
             .current_dir(&test_app_dir)
-            .args(&["-p", login_items_dir.to_str().unwrap()])
+            .args(["-p", login_items_dir.to_str().unwrap()])
             .status()?;
     }
 
@@ -82,7 +82,7 @@ fn get_test_app_path() -> io::Result<PathBuf> {
         println!("Copying app bundle to LoginItems...");
         Command::new("cp")
             .current_dir(&test_app_dir)
-            .args(&[
+            .args([
                 "-r",
                 app_bundle_path.to_str().unwrap(),
                 login_item_app_path.to_str().unwrap(),

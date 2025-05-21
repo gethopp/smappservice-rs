@@ -343,7 +343,7 @@ impl AppService {
             Err(error) => {
                 let error_code = error.code() as u32;
                 Err(ServiceManagementError::try_from(error_code)
-                    .unwrap_or_else(|_| ServiceManagementError::Unknown(error_code)))
+                    .unwrap_or(ServiceManagementError::Unknown(error_code)))
             }
         }
     }
@@ -383,7 +383,7 @@ impl AppService {
             Err(error) => {
                 let error_code = error.code() as u32;
                 Err(ServiceManagementError::try_from(error_code)
-                    .unwrap_or_else(|_| ServiceManagementError::Unknown(error_code)))
+                    .unwrap_or(ServiceManagementError::Unknown(error_code)))
             }
         }
     }
