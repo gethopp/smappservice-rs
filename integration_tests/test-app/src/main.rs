@@ -67,7 +67,7 @@ fn test_daemon() {
             println!("[Daemon] Invalid signature error. Please sign the app bundle using the following command:");
             println!("[Daemon] codesign --deep --force --verify --options runtime --sign \"Your Signature Title\" test-app/target/debug/bundle/osx/smappservice-test-app.app");
         }
-        assert!(false);
+        panic!("Failed to register Daemon service: {:?}", err);
     }
 
     // Query status after registration
