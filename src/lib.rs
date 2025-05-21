@@ -183,7 +183,9 @@ pub enum ServiceManagementError {
     JobNotFound = kSMErrorJobNotFound,
 
     /// The service necessary to perform this operation is unavailable or is no longer accepting requests.
-    #[error("the service necessary to perform this operation is unavailable or is no longer accepting requests")]
+    #[error(
+        "the service necessary to perform this operation is unavailable or is no longer accepting requests"
+    )]
     ServiceUnavailable = kSMErrorServiceUnavailable,
 
     /// The system can't find the app's property list file.
