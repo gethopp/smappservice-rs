@@ -203,6 +203,7 @@ fn main() {
 
     if args.len() != 2 {
         eprintln!("Usage: {} [mainapp|daemon|loginitem|agent]", args[0]);
+        return;
     }
 
     let service_type = &args[1].to_lowercase();
