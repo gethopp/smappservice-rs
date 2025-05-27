@@ -213,6 +213,39 @@ pub enum ServiceManagementError {
     Unknown(u32),
 }
 
+impl ServiceManagementError {
+    /// Returns the error code associated with this error.
+    ///
+    /// This method returns the underlying error code that corresponds to the
+    /// ServiceManagement framework error constants.
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// use smappservice_rs::ServiceManagementError;
+    ///
+    /// let error = ServiceManagementError::InvalidSignature;
+    /// let code = error.code();
+    /// println!("Error code: {}", code);
+    /// ```
+    pub fn code(&self) -> u32 {
+        match self {
+            ServiceManagementError::InternalFailure => kSMErrorInternalFailure,
+            ServiceManagementError::InvalidSignature => kSMErrorInvalidSignature,
+            ServiceManagementError::AuthorizationFailure => kSMErrorAuthorizationFailure,
+            ServiceManagementError::ToolNotValid => kSMErrorToolNotValid,
+            ServiceManagementError::JobNotFound => kSMErrorJobNotFound,
+            ServiceManagementError::ServiceUnavailable => kSMErrorServiceUnavailable,
+            ServiceManagementError::JobPlistNotFound => kSMErrorJobPlistNotFound,
+            ServiceManagementError::JobMustBeEnabled => kSMErrorJobMustBeEnabled,
+            ServiceManagementError::InvalidPlist => kSMErrorInvalidPlist,
+            ServiceManagementError::LaunchDeniedByUser => kSMErrorLaunchDeniedByUser,
+            ServiceManagementError::AlreadyRegistered => kSMErrorAlreadyRegistered,
+            ServiceManagementError::Unknown(code) => *code,
+        }
+    }
+}
+
 impl TryFrom<u32> for ServiceManagementError {
     type Error = ();
 
@@ -298,7 +331,7 @@ impl AppService {
                 SMAppService::loginItemServiceWithIdentifier(&input_arg)
             },
         };
-        Self { service: service }
+        Self { service }
     }
 
     /// Registers the service so it can begin launching according to its configuration.
@@ -462,5 +495,61 @@ mod tests {
                 "Service status should be NotFound"
             );
         }
+    }
+
+    #[test]
+    fn test_service_management_error_code() {
+        // Test known error variants
+        assert_eq!(
+            ServiceManagementError::InternalFailure.code(),
+            kSMErrorInternalFailure
+        );
+        assert_eq!(
+            ServiceManagementError::InvalidSignature.code(),
+            kSMErrorInvalidSignature
+        );
+        assert_eq!(
+            ServiceManagementError::AuthorizationFailure.code(),
+            kSMErrorAuthorizationFailure
+        );
+        assert_eq!(
+            ServiceManagementError::ToolNotValid.code(),
+            kSMErrorToolNotValid
+        );
+        assert_eq!(
+            ServiceManagementError::JobNotFound.code(),
+            kSMErrorJobNotFound
+        );
+        assert_eq!(
+            ServiceManagementError::ServiceUnavailable.code(),
+            kSMErrorServiceUnavailable
+        );
+        assert_eq!(
+            ServiceManagementError::JobPlistNotFound.code(),
+            kSMErrorJobPlistNotFound
+        );
+        assert_eq!(
+            ServiceManagementError::JobMustBeEnabled.code(),
+            kSMErrorJobMustBeEnabled
+        );
+        assert_eq!(
+            ServiceManagementError::InvalidPlist.code(),
+            kSMErrorInvalidPlist
+        );
+        assert_eq!(
+            ServiceManagementError::LaunchDeniedByUser.code(),
+            kSMErrorLaunchDeniedByUser
+        );
+        assert_eq!(
+            ServiceManagementError::AlreadyRegistered.code(),
+            kSMErrorAlreadyRegistered
+        );
+
+        // Test unknown error variant
+        let unknown_code = 9999u32;
+        assert_eq!(
+            ServiceManagementError::Unknown(unknown_code).code(),
+            unknown_code
+        );
     }
 }

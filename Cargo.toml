@@ -1,6 +1,6 @@
 [package]
 name = "smappservice-rs"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["iparaskev"]
 description = "A Rust wrapper for macOS's ServiceManagement framework, specifically the SMAppService API"
 repository = "https://github.com/gethopp/smappservice-rs"
