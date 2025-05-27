@@ -21,11 +21,8 @@ The ServiceManagement framework in macOS provides a way for applications to mana
 
 ## Installation
 
-Add this to your `Cargo.toml`:
-
-```toml
-[dependencies]
-smappservice-rs = "0.1.0"
+```bash
+cargo add smappservice-rs
 ```
 
 ## Usage
